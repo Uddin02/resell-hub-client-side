@@ -7,7 +7,7 @@ module.exports = {
     themes: [
       {
         recelhubtheme:{
-          primary: '#0ea5e9',
+          primary: '#3b82f6',
           secondary: '#19D3AE',
           accent: "#64748b",
           neutral: "#3D4451",
