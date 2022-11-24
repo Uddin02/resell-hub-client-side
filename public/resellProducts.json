@@ -1,0 +1,57 @@
+[
+  {
+    "id": "637f643bb95b42d2fa49a210",
+    "image": "https://i.ibb.co/ZgBRXjp/Iphone-11-2.jpg",
+    "product_name": "Iphone 11",
+    "location": "Dhaka,Bangladesh",
+    "resell_price": "180$",
+    "orginal_price": "300$",
+    "year_used": "1 year",
+    "seller_name": "Arif",
+    "posted": "8:20:24 PM"
+  },
+  {
+    "id": "637f643bb95b42d2fa49a20e",
+    "image": "https://i.ibb.co/0hgjwSf/pixel.jpg",
+    "product_name": "pixel 5",
+    "location": "Cumilla,Bangladesh",
+    "resell_price": "200$",
+    "orginal_price": "350$",
+    "year_used": "1.2 year",
+    "seller_name": "Prium",
+    "posted": "6:13:24 AM"
+  },
+  {
+    "id": "637f643bb95b42d2fa49a20d",
+    "image": "https://i.ibb.co/V9zprDx/One-Plus-8-1.jpg",
+    "product_name": "One Plus 8",
+    "location": "Dhaka,Bangladesh",
+    "resell_price": "120$",
+    "orginal_price": "270$",
+    "year_used": "1.4 year",
+    "seller_name": "Mahmud",
+    "posted": "11:23:24 PM"
+  },
+  {
+    "id": "637f643bb95b42d2fa49a20c",
+    "image": "https://i.ibb.co/1GGQDth/Poco-X3-1.jpg",
+    "product_name": "Poco X3",
+    "location": "Dhaka,Bangladesh",
+    "resell_price": "100$",
+    "orginal_price": "170$",
+    "year_used": "1 year",
+    "seller_name": "Mahin",
+    "posted": "12:26:34 AM"
+  },
+  {
+    "id": "637f643bb95b42d2fa49a20f",
+    "image": "https://i.ibb.co/9tNjfmF/samsung-galaxy-note-20.jpg",
+    "product_name": "Samsung galaxy note 20",
+    "location": "Barishal,Bangladesh",
+    "resell_price": "100$",
+    "orginal_price": "350$",
+    "year_used": "2 year",
+    "seller_name": "Hridoy",
+    "posted": "10:13:30 PM"
+  }
+]

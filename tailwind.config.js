@@ -6,8 +6,8 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        recelhubtheme:{
-          primary: '#3b82f6',
+        resellhubtheme:{
+          primary: '#60a5fa',
           secondary: '#19D3AE',
           accent: "#64748b",
           neutral: "#3D4451",
