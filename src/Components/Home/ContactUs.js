@@ -3,7 +3,7 @@ import contact from '../../assets/contact-us.png';
 
 const ContactUs = () => {
     return (
-        <section className="p-6 dark:text-gray-100" style={{background: `url(${contact})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+        <section className="p-6 mt-24 dark:text-gray-100" style={{background: `url(${contact})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
             <form  className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md ng-untouched ng-pristine ng-valid">
                 <h2 className="w-full text-4xl font-bold leading-tight text-center text-sky-900 ">Contact us</h2>
                 <h2 className="w-full text-2xl  leading-tight text-center text-gray-800">Stay connected with us</h2>

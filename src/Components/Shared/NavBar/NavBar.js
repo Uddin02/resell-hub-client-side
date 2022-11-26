@@ -1,25 +1,28 @@
-// import React, { useContext } from "react";
-import React from "react";
+import React, { useContext } from "react";
+import { FaSignOutAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const NavBar = () => {
-  // const { user, logOut } = useContext(AuthContext);
+  
+  const { user, logOut } = useContext(AuthContext);
 
-  // const handleLogOut = () => {
-  //   logOut()
-  //     .then(() => {})
-  //     .catch((err) => console.log(err));
-  // };
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+  };
 
   const menuItems = <React.Fragment>
     <li className="font-semibold"><Link to="/">Home</Link></li>
     <li className="font-semibold"><Link to="/about">About</Link></li>
-    
-            <li className="font-semibold"><Link to="/dashboard">Dashboard</Link></li>
-            {/* onClick={handleLogOut} */}
-            <li className="font-semibold"><button >Sign out</button></li>
-         <li className="font-semibold"><Link to="/login">Login</Link></li>
+    {user?.uid ?
+        <>
+            {/* <li className="font-semibold"><Link to="/dashboard">Dashboard</Link></li> */}
+            <li><p className="mx-auto font-bold"> {user?.displayName}</p></li>
+            <li className="font-semibold"><button onClick={handleLogOut}><FaSignOutAlt/>Sign out</button></li>
+        </>
+        : <li className="font-semibold"><Link to="/login">Login</Link></li>}
   </React.Fragment>
 
   return (
@@ -33,7 +36,7 @@ const NavBar = () => {
                   {menuItems}
               </ul>
           </div>
-          <Link to="/" className="text-xl text-primary ml-10">Resell Hub</Link>
+          <Link to="/" className="text-primary ml-10 text-xl font-bold">Resell Hub</Link>
       </div>
       <div className="navbar-center hidden lg:flex mr-10">
           <ul className="menu menu-horizontal p-0">

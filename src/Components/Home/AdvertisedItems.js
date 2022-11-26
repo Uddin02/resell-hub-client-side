@@ -1,22 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 import { FaBookmark } from "react-icons/fa";
+import Loading from '../Shared/Loading/Loading';
 
 const AdvertisedItems = () => {
 
-    const [advertises, setAdvertises] = useState([]);
-    // console.log(categories)
-    
+    const { data: advertises, isLoading } = useQuery({
+      queryKey: ["advertises"],
+      queryFn: async () => {
+        try {
+          const res = await fetch("http://localhost:5000/advertisesdItems");
+          const data = await res.json();
+          return data;
+        } catch (error) {
+          console.log(error);
+        }
+      },
+    });
   
-    useEffect(() => {
-      fetch("resellPROducts.json")
-        .then((res) => res.json())
-        .then((data) => setAdvertises(data));
-    }, []);
+    if (isLoading) {
+      return <Loading />;
+    }
     
     return (
-        <div className='mt-10 grid lg:grid-cols-4 gap-10'>            
+        <div className='mt-14 grid lg:grid-cols-4 gap-10'>            
             {advertises.map((advertise) => (
-            <div className=" card card-compact lg:w-80 bg-base-100 shadow-xl shadow-primary">
+            <div key={advertise._id} className=" card card-compact lg:w-80 bg-base-100 shadow-xl shadow-primary">
               <figure className=''>
                 <img src={advertise.image} alt="advertise" />
               </figure>
