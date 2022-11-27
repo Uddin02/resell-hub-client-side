@@ -1,10 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import image from '../../assets/Add-notes.png';
+import { AuthContext } from '../../contexts/AuthProvider';
 import Loading from '../Shared/Loading/Loading';
 
 const AddProducts = () => {
+
+    const { user } = useContext(AuthContext);
+    // console.log(user.email);
 
     const { data: categories, isLoading } = useQuery({
         queryKey: ["categories"],
@@ -22,7 +26,7 @@ const AddProducts = () => {
 
     if (isLoading) {
         return <Loading />;
-      }
+    }
     
     const postedTime = new Date().toLocaleTimeString();
     // console.log(postedTime);
@@ -38,8 +42,9 @@ const AddProducts = () => {
         const originalPrice = form.original_price.value;
         const resalePrice = form.resale_price.value;
         const yearUsed = form.year_used.value;
+        const userEmail = user.email;
         
-        // console.log(yearUsed);
+        // console.log(userEmail);
         
         const productDetail = {
             id: categoryID,
@@ -50,6 +55,7 @@ const AddProducts = () => {
             orginal_price: originalPrice,
             year_used: yearUsed,
             seller_name: sellerName,
+            seller_email: userEmail,
             posted: postedTime
         }
    
