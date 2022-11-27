@@ -42,7 +42,13 @@ const CategoryProduct = ({catagoryDetail}) => {
         .then(result=>{
           console.log(result);
           setShowModal(false) 
-          toast.success('The Item Is Booked!') 
+          if(result.acknowledged === false){
+            toast.error(`${result.message}`)
+          }
+          else{
+
+            toast.success('The Item Is Booked!') 
+          }
         })     
   
     
@@ -96,5 +102,4 @@ const CategoryProduct = ({catagoryDetail}) => {
 };
 
 export default CategoryProduct;
-
 

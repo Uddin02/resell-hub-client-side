@@ -1,4 +1,3 @@
-// import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CategoryProduct from './CategoryProduct';
@@ -7,7 +6,6 @@ import CategoryProduct from './CategoryProduct';
 const CategoryProducts = () => {
     
     const catagoryDetails = useLoaderData();
-    // console.log(catagoryDetails);
     
     return (
         <div className="lg:mx-12 lg:my-10 mx-5">
@@ -25,5 +23,3 @@ const CategoryProducts = () => {
 };
 
 export default CategoryProducts;
-
-// className='mt-10 grid lg:grid-cols-4 gap-10'

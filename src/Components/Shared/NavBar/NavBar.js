@@ -18,7 +18,7 @@ const NavBar = () => {
     <li className="font-semibold"><Link to="/about">About</Link></li>
     {user?.uid ?
         <>
-            {/* <li className="font-semibold"><Link to="/dashboard">Dashboard</Link></li> */}
+            <li className="font-semibold"><Link to="/dashboard">Dashboard</Link></li>
             <li><p className="mx-auto font-bold"> {user?.displayName}</p></li>
             <li className="font-semibold"><button onClick={handleLogOut}><FaSignOutAlt/>Sign out</button></li>
         </>
