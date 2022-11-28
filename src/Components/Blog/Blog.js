@@ -2,30 +2,7 @@ import React from "react";
 
 const Blog = () => {
   return (
-    // <div className="my-10">
-    //   <div className="card lg:card-side bg-base-100 shadow-xl max-w-4xl mb-6 mx-auto ">
-    //     <figure className="">
-    //       <img
-    //         className="w-full"
-    //         src="https://placeimg.com/200/280/arch"
-    //         alt="Album"
-    //       />
-    //     </figure>
-    //     <div className="card-body">
-    //       <h2 className="card-title">sadgjasdlhg</h2>
-    //       <p className="text-justify">sadfas</p>
 
-    //       <div className="card-actions justify-around">
-    //         <p>Duration: sdfas</p>
-    //         <Link>
-    //           <button className="btn  btn-outline btn-info">
-    //             View details
-    //           </button>
-    //         </Link>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <section className=" dark:text-gray-100 ">
       <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
         <h2 className="mb-12 text-4xl text-gray-800 font-bold leading-none text-center sm:text-5xl">

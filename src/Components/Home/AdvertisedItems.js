@@ -56,6 +56,8 @@ const AdvertisedItems = () => {
                   </div> */}
                 </div>
               </div>
+
+              
           ))}
           </div>)
         }
