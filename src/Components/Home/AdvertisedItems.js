@@ -33,9 +33,9 @@ const AdvertisedItems = () => {
           There is no Advertised items to show
         </h2>
       ) : (
-        <div className="mt-14 grid lg:grid-cols-1 gap-10">
+        <div  className="mt-14 grid lg:grid-cols-1 gap-10">
           {advertises.map((advertise) => (
-            <div className="">
+            <div key={advertise?._id} className="">
               <div className="card lg:card-side bg-base-100 shadow-xl max-w-2xl mb-6 mx-auto ">
                 <figure className="">
                   <img className="w-96" src={advertise?.image} alt="Album" />
