@@ -11,7 +11,6 @@ const Home = () => {
         <img className="lg:w-11/12 " src={banner} alt="banner" />
       </div>
         <div className="lg:mx-14 mb-10 mx-5">
-            <h2 className="text-4xl text-primary"><span className="border-b-2 border-accent">Advertised</span> items</h2>
             <AdvertisedItems/>
             <Categories/>
             <ContactUs/>

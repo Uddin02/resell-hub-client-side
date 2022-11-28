@@ -32,7 +32,7 @@ const Bookings = () => {
 
     return (
         <div>
-            <h3 className="text-3xl my-4">My Bookings</h3>
+            <h3 className="m-5 text-2xl font-bold">My Bookings {bookings?.length}</h3>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -47,12 +47,12 @@ const Bookings = () => {
                     <tbody>
                         {
                             bookings &&
-                            bookings?.map((booking, i) => <tr key={booking._id}>
+                            bookings?.map((booking, i) => <tr key={booking?._id}>
                                 <th>{i+1}</th>
-                                <td>{booking.product}</td>
+                                <td>{booking?.product}</td>
                                 <td><img className='w-20' src={booking?.image} alt="product_image" /></td>
-                                <td>{booking.price}</td>
-                                <td>{booking.appointmentDate}</td>
+                                <td>{booking?.price}</td>
+                                <td>{booking?.appointmentDate}</td>
                                 
                             </tr>)
                         }
