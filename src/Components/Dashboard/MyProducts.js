@@ -112,7 +112,7 @@ const MyProducts = () => {
                                 <th>{i+1}</th>
                                 <td className='font-semibold'>{myProduct?.product_name}</td>
                                 <td><img className='w-20' src={myProduct?.image} alt="product_image" /></td>
-                                <td className='font-semibold'>{myProduct?.resell_price}</td>
+                                <td className='font-semibold'>${myProduct?.resell_price}</td>
                                 <td className='font-semibold'>{myProduct?.location}</td>
                                 {/* <td className='font-semibold'>{myProduct?.resell_price}</td> */}
                                

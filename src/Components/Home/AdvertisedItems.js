@@ -45,7 +45,7 @@ const AdvertisedItems = () => {
                   <h2 className="card-title text-sm">Location: {advertise?.location}</h2>
                   <h2 className="card-title text-sm">Product Condition: { advertise?.product_condition ? advertise?.product_condition : 'Fair' }</h2>
                   <div className='lg: flex justify-between'>
-                      <h2 className="card-title text-sm">Resale Price: {advertise?.resell_price}</h2>
+                      <h2 className="card-title text-sm">Resale Price: ${advertise?.resell_price}</h2>
                   </div>
                   <div className='lg: flex justify-between'>
                       <h2 className="card-title text-sm">Year Of Purchase: { advertise?.year_of_purchase ? advertise?.year_of_purchase : '2022-02-3'  }</h2>

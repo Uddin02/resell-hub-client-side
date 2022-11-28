@@ -69,8 +69,8 @@ const CategoryProduct = ({catagoryDetail}) => {
                 <h2 className="card-title text-md">Seller Name: {seller_name}</h2>
                 <h2 className="card-title text-sm">Location: {location}</h2>
                 <div className='lg: flex justify-between'>
-                    <h2 className="card-title text-sm">Resale Price: {resell_price}</h2>
-                    <h2 className="card-title text-sm">Orginal Price: {orginal_price}</h2>
+                    <h2 className="card-title text-sm">Resale Price: ${resell_price}</h2>
+                    <h2 className="card-title text-sm">Orginal Price: ${orginal_price}</h2>
                 </div>
                 <div className='lg: flex justify-between'>
                     <h2 className="card-title text-sm">Year Used: {year_used}</h2>

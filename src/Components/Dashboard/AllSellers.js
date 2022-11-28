@@ -78,8 +78,8 @@ const AllSellers = () => {
                                     value={seller}
                                     className="hover">
                                     <th>{i + 1}</th>
-                                    <td>{seller?.name}</td>
-                                    <td>{seller?.email}</td>
+                                    <td className='font-semibold text-gray-900'>{seller?.name}</td>
+                                    <td className='font-semibold text-gray-900'>{seller?.email}</td>
                                     <td>
                                         <label onClick={() => setDeletingSeller(seller)} htmlFor="confirmation-modal" className="btn btn-sm bg-red-700 border-none text-white">Delete</label>
                                     </td>

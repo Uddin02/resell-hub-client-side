@@ -53,17 +53,17 @@ const Bookings = () => {
                         {
                             bookings &&
                             bookings?.map((booking, i) => <tr key={booking?._id}>
-                                <th>{i+1}</th>
-                                <td>{booking?.product}</td>
-                                <td><img className='w-20' src={booking?.image} alt="product_image" /></td>
-                                <td>{booking?.price}</td>
-                                <td>{booking?.phoneNumber}</td>
+                                <th className='font-semibold text-gray-900'>{i+1}</th>
+                                <td className='font-semibold text-gray-900'>{booking?.product}</td>
+                                <td className='font-semibold text-gray-900'><img className='w-20' src={booking?.image} alt="product_image" /></td>
+                                <td className='font-semibold text-gray-900'>${booking?.price}</td>
+                                <td className='font-semibold text-gray-900'>{booking?.phoneNumber}</td>
                                 <td>
                                     {
                                         booking.price && !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}><button className='btn btn-sm btn-primary text-white'>Pay</button></Link>
                                     }
                                     {
-                                        booking.price && booking.paid && <span className='text-primary'>Paid</span>
+                                        booking.price && booking.paid && <span className='text-green-800 font-semibold'>Paid</span>
                                     }
                                 </td>
                             </tr>)
