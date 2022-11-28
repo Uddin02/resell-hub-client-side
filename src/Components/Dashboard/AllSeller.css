@@ -1,0 +1,8 @@
+.verifyIcon {
+  display: inline;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

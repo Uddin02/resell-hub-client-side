@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import ConfirmationModal from '../Shared/ConfirmationModal/ConfirmationModal';
 import Loading from '../Shared/Loading/Loading';
+import './AllSeller.css';
 
 
 const AllSellers = () => {
@@ -54,6 +55,26 @@ const AllSellers = () => {
             })
     }
 
+    const handleVerify = seller => {
+        fetch(`http://localhost:5000/users/${seller._id}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify({ verified: 'verified' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    refetch()
+                    toast.success(`Seller ${seller.name} verified successfully`)
+                }
+
+            })
+    }
+
 
 
 
@@ -69,6 +90,7 @@ const AllSellers = () => {
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Action</th>
+                                <th>Verify</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,11 +100,26 @@ const AllSellers = () => {
                                     value={seller}
                                     className="hover">
                                     <th>{i + 1}</th>
-                                    <td className='font-semibold text-gray-900'>{seller?.name}</td>
+                                    {seller?.status === 'verified' &&
+                                        <td className='font-semibold text-gray-900'>{seller?.name}<img src="https://i.ibb.co/n1rvDcv/valid-vector-icon-png-260889.jpg" alt="verifyIcon" class="verifyIcon"></img></td>
+                                    }
+                                    {
+                                        seller?.status !== 'verified' &&
+                                        <td className='font-semibold text-gray-900'>{seller?.name}</td>
+                                    }
                                     <td className='font-semibold text-gray-900'>{seller?.email}</td>
                                     <td>
                                         <label onClick={() => setDeletingSeller(seller)} htmlFor="confirmation-modal" className="btn btn-sm bg-red-700 border-none text-white">Delete</label>
                                     </td>
+
+                                    {seller?.status === 'verified' &&
+                                        <td><p className='text-green-600 font-extrabold'>Verified</p></td>
+                                    }
+                                    {
+                                        seller?.status !== 'verified' &&
+                                        <td><label onClick={() => handleVerify(seller)} className="btn btn-sm b">verify</label></td>
+                                    }
+                                    
                                 </tr>)
                             }
                         </tbody>
