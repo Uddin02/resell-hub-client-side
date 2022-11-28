@@ -1,6 +1,20 @@
+# Resell Hub
+
+### Live link -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+- This project is created based on the MEARN stack.
+- In this project i display the four categories which are loaded by the custom api.
+- Seller can add a product and remove a product.
+- Admin can view all sellers and buyers.
+- If a admin want he/she can remove a user.
+- I used stripe as a payment method.
+- In this project i used jwt token to validate the user.
+- Moreover the data of this project is sorted through the MongoDB sort by field ascending order.
+- And this project is fully resposive for small, medium & large devices.
 
 ## Available Scripts
 
