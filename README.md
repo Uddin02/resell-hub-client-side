@@ -1,6 +1,9 @@
 # Resell Hub
 
-### Live link -->
+### Live link -->https://resell-hub.web.app
+
+adminEmail: bohigax997@klblogs.com
+adminPassword: 123Arif@
 
 # Getting Started with Create React App
 
