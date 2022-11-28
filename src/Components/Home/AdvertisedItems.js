@@ -9,7 +9,7 @@ const AdvertisedItems = () => {
       queryKey: ["advertises"],
       queryFn: async () => {
         try {
-          const res = await fetch(`http://localhost:5000/advertisesdItems?status=Available`);
+          const res = await fetch(`https://resell-hub-server.vercel.app/advertisesdItems?status=Available`);
           const data = await res.json();
           return data;
         } catch (error) {

@@ -9,7 +9,7 @@ const Bookings = () => {
 
     const navigate = useNavigate();
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://resell-hub-server.vercel.app/bookings?email=${user?.email}`;
 
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],

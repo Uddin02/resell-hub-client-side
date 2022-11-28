@@ -18,7 +18,7 @@ const AllSellers = () => {
         queryKey: ['sellers'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/users/Seller',{
+                const res = await fetch('https://resell-hub-server.vercel.app/users/Seller',{
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -41,7 +41,7 @@ const AllSellers = () => {
 
 
     const handleDeleteSeller = seller => {
-        fetch(`http://localhost:5000/users/${seller._id}`, {
+        fetch(`https://resell-hub-server.vercel.app/users/${seller._id}`, {
             method: 'DELETE'           
         })
             .then(res => res.json())
@@ -56,7 +56,7 @@ const AllSellers = () => {
     }
 
     const handleVerify = seller => {
-        fetch(`http://localhost:5000/users/${seller._id}`, {
+        fetch(`https://resell-hub-server.vercel.app/users/${seller._id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

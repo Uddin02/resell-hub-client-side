@@ -16,7 +16,7 @@ const MyProducts = () => {
 
     const navigate = useNavigate();
 
-    const url = `http://localhost:5000/myProducts?email=${user?.email}`;
+    const url = `https://resell-hub-server.vercel.app/myProducts?email=${user?.email}`;
 
     const { data: myProducts = [], refetch } = useQuery({
         queryKey: ['myProducts', user?.email],
@@ -42,7 +42,7 @@ const MyProducts = () => {
 
     const handleStatusUpdate = id =>{
         // console.log(id);
-        fetch(`http://localhost:5000/myProduct/${id}`, {
+        fetch(`https://resell-hub-server.vercel.app/myProduct/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -58,7 +58,7 @@ const MyProducts = () => {
     
     const handleSoldStatusUpdate = id =>{
         // console.log(id);
-        fetch(`http://localhost:5000/myProduct/${id}`, {
+        fetch(`https://resell-hub-server.vercel.app/myProduct/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -73,7 +73,7 @@ const MyProducts = () => {
     }
 
     const handleDeleteProduct = product => {
-        fetch(`http://localhost:5000/myProducts/${product._id}`, {
+        fetch(`https://resell-hub-server.vercel.app/myProducts/${product._id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

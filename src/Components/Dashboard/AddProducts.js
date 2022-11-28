@@ -16,7 +16,7 @@ const AddProducts = () => {
         queryKey: ["categories"],
         queryFn: async () => {
           try {
-            const res = await fetch("http://localhost:5000/categories");
+            const res = await fetch("https://resell-hub-server.vercel.app/categories");
             const data = await res.json();
             return data;
         } catch (error) {
@@ -77,7 +77,7 @@ const AddProducts = () => {
             posted: postedTime
         }
    
-        fetch('http://localhost:5000/addProduct', {
+        fetch('https://resell-hub-server.vercel.app/addProduct', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

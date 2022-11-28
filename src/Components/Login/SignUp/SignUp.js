@@ -54,7 +54,7 @@ const SignUp = () => {
 
     const saveUser = (name, email, role) => {
 
-        axios.post(`http://localhost:5000/users`, {
+        axios.post(`https://resell-hub-server.vercel.app/users`, {
             name: name,
             email: email,
             role: role
