@@ -17,7 +17,11 @@ const AllSellers = () => {
         queryKey: ['sellers'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/users/Seller');
+                const res = await fetch('http://localhost:5000/users/Seller',{
+                    headers: {
+                        authorization: `bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
                 const data = await res.json();
                 return data;
             }

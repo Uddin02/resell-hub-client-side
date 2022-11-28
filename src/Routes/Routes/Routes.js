@@ -6,6 +6,7 @@ import AllBuyers from '../../Components/Dashboard/AllBuyers';
 import AllSellers from '../../Components/Dashboard/AllSellers';
 import Bookings from '../../Components/Dashboard/Bookings';
 import MyProducts from '../../Components/Dashboard/MyProducts';
+import Payment from '../../Components/Dashboard/Payment/Payment';
 import CategoryProducts from '../../Components/Home/CategoryProducts/CategoryProducts';
 import Home from '../../Components/Home/Home';
 import Login from '../../Components/Login/Login/Login';
@@ -71,7 +72,12 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addproducts',
                 element: <PrivateRoute><SellerRoute><AddProducts/></SellerRoute></PrivateRoute>
-            }
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <PrivateRoute><Payment/></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
+            },
             
         ]
     }

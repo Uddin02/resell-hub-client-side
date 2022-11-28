@@ -80,7 +80,8 @@ const AddProducts = () => {
         fetch('http://localhost:5000/addProduct', {
                 method: 'POST',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(productDetail)
             })
@@ -137,7 +138,7 @@ const AddProducts = () => {
                 </div>
                 <div>
                     <label htmlFor="seller_name" className="text-sm font-semibold">Your Name</label>
-                    <input id="seller_name" type="text" placeholder="" className="w-full p-3 rounded font-semibold text-slate-900 dark:bg-gray-50" required  />
+                    <input id="seller_name" type="text" placeholder="" defaultValue={user?.displayName} className="w-full p-3 rounded font-semibold text-slate-900 dark:bg-gray-50" readOnly />
                 </div>
                 <div>
                     <label htmlFor="location" className="text-sm font-semibold">Your Location</label>

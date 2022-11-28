@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const Bookings = () => {
@@ -14,7 +14,11 @@ const Bookings = () => {
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
-            const res = await fetch(url);
+            const res = await fetch(url, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data = await res.json();
             if(data?.message){
                 logOut();
@@ -41,6 +45,7 @@ const Bookings = () => {
                             <th>Product Name</th>
                             <th>Product Image</th>
                             <th>Product Price</th>
+                            <th>Seller Phone Number</th>
                             <th>Payment</th>
                         </tr>
                     </thead>
@@ -52,8 +57,15 @@ const Bookings = () => {
                                 <td>{booking?.product}</td>
                                 <td><img className='w-20' src={booking?.image} alt="product_image" /></td>
                                 <td>{booking?.price}</td>
-                                <td>{booking?.appointmentDate}</td>
-                                
+                                <td>{booking?.phoneNumber}</td>
+                                <td>
+                                    {
+                                        booking.price && !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}><button className='btn btn-sm btn-primary text-white'>Pay</button></Link>
+                                    }
+                                    {
+                                        booking.price && booking.paid && <span className='text-primary'>Paid</span>
+                                    }
+                                </td>
                             </tr>)
                         }
                     </tbody>
